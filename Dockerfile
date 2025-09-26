@@ -28,8 +28,7 @@ WORKDIR /home/coder
 # Create workspace directory
 RUN mkdir -p /home/coder/workspace
 
-# Expose the default code-server port
-EXPOSE 8080
+
 
 # Start code-server
 CMD ["code-server", "--bind-addr", "0.0.0.0:8080", "--auth", "password", "/home/coder/workspace"]
