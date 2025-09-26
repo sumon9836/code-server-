@@ -4,10 +4,9 @@ FROM codercom/code-server:latest
 ENV PASSWORD="@kira"
 ENV SUDO_PASSWORD="@kira"
 
-# Create a non-root user
+# Configure the existing coder user
 USER root
-RUN useradd -m -s /bin/bash coder && \
-    echo "coder ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
+RUN echo "coder ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 
 # Install additional tools (customize as needed)
 RUN apt-get update && apt-get install -y \
